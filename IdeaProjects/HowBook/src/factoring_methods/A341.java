@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import static java.lang.Math.abs;
 
-public class A34 {
+public class A341 {
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         System.out.println("enter the value of n");
@@ -40,9 +40,11 @@ public class A34 {
                     prime = true;
                     int j = 2;
                     while (prime && j < limit) {
-                        while (multiple[j] < x) {
-                            multiple[j] += p[j] * 2;
+                        int s = multiple[j];
+                        while (s < x) {
+                            s += p[j] * 2;
                         }
+                        multiple[j] = s;
                         prime = x != multiple[j];
                         j = j + 1;
                     }
